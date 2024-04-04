@@ -1,5 +1,6 @@
 import React from 'react';
 import { Camiseta } from '../models';
+import Link from 'next/link';
 
 interface CamisetaListagemPropiedades {
   camisetas: Camiseta[];
@@ -15,6 +16,7 @@ const CamisetaListagem = ({ camisetas }: CamisetaListagemPropiedades) => {
           <p className="text-gray-600">${camiseta.preco}</p>
           <p className="text-gray-600">Tamanhos: {camiseta.tamanhos.join(', ')}</p>
           <p className="text-gray-600">Cores: {camiseta.cores.join(', ')}</p>
+          <p><Link href={`/camisetas/${camiseta.id}`}>Ver Detalhes</Link></p>
         </div>
       ))}
     </div>
